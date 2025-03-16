@@ -1,0 +1,12 @@
+body {
+  background-image: url('assets/images/background-image.jpg');
+  font-family: 'MyCustomFont', sans-serif; /* Assuming you've set up custom font */
+}
+
+@font-face {
+  font-family: 'MyCustomFont';
+  src: url('assets/fonts/my-font-regular.woff2') format('woff2'),
+       url('assets/fonts/my-font-regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
