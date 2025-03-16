@@ -1,0 +1,36 @@
+// js/script.js - Main JavaScript File
+
+document.addEventListener('DOMContentLoaded', () => {
+  // Smooth scrolling for navigation links
+  document.querySelectorAll('nav a').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href');
+      document.querySelector(targetId).scrollIntoView({
+        behavior: 'smooth'
+      });
+    });
+  });
+
+  // Example: Add a class on scroll (e.g., for sticky navigation)
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 100) {
+      document.querySelector('header').classList.add('sticky');
+    } else {
+      document.querySelector('header').classList.remove('sticky');
+    }
+  });
+
+  // Basic form validation example (if you have a contact form)
+  const contactForm = document.querySelector('#contact form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+      const nameInput = contactForm.querySelector('input[name="name"]');
+      const emailInput = contactForm.querySelector('input[name="email"]');
+      if (!nameInput.value || !emailInput.value) {
+        e.preventDefault();
+        alert('Please fill in all required fields.');
+      }
+    });
+  }
+});
