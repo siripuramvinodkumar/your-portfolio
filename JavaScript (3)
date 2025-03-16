@@ -1,0 +1,36 @@
+// js/gsap-animations.js - GSAP specific animations
+
+gsap.registerPlugin(ScrollTrigger);
+
+// Example: Animate project items on scroll
+gsap.utils.toArray('.project-item').forEach(item => {
+  gsap.from(item, {
+    opacity: 0,
+    y: 50,
+    scrollTrigger: {
+      trigger: item,
+      start: 'top 80%',
+      end: 'bottom 20%',
+      toggleActions: 'play none none reverse',
+    },
+    duration: 1,
+  });
+});
+
+// Example: Animate header on page load
+gsap.from('header', {
+  opacity: 0,
+  y: -50,
+  duration: 1,
+});
+
+// Example: Animate hero section content
+gsap.from('#hero h1, #hero p, #hero .btn', {
+  opacity: 0,
+  y: 50,
+  duration: 1,
+  stagger: 0.2,
+  delay: 0.5,
+});
+
+// Add more GSAP animations as needed
