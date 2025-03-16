@@ -1,0 +1,9 @@
+// Inside your threejs-scene.js file (or similar)
+
+const loader = new THREE.GLTFLoader();
+
+loader.load('assets/models/project-model.glb', function (gltf) {
+  scene.add(gltf.scene);
+}, undefined, function (error) {
+  console.error(error);
+});
